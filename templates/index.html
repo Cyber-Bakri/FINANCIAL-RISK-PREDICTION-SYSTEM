@@ -180,18 +180,20 @@
                                 <div class="form-text">Comma-separated symbols</div>
                             </div>
                             <div class="col-md-4">
-                                <label for="weights" class="form-label">Weights (%)</label>
-                                <input type="text" class="form-control" id="weights" 
-                                       placeholder="e.g., 25,25,25,25" 
-                                       value="25,25,25,25">
-                                <div class="form-text">Must sum to 100%</div>
+                                <label for="amounts" class="form-label">Investment Amounts ($)</label>
+                                <input type="text" class="form-control" id="amounts" 
+                                       placeholder="e.g., 25000,25000,25000,25000" 
+                                       value="25000,25000,25000,25000">
+                                <div class="form-text">Dollar amounts per stock</div>
                             </div>
                             <div class="col-md-4">
-                                <label for="portfolioValue" class="form-label">Portfolio Value ($)</label>
-                                <input type="number" class="form-control" id="portfolioValue" 
-                                       value="100000" min="1000" step="1000">
-                                <div class="form-text">Investment amount</div>
+                                <label for="totalValue" class="form-label">Total Portfolio Value</label>
+                                <input type="text" class="form-control" id="totalValue" 
+                                       value="$100,000" readonly>
+                                <div class="form-text">Auto-calculated from amounts</div>
                             </div>
+                            <!-- Hidden weights field for backend compatibility -->
+                            <input type="hidden" id="weights" value="25,25,25,25">
                         </div>
                         
                         <div class="row mt-3">

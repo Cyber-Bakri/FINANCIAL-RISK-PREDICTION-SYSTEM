@@ -1641,3 +1641,355 @@ zed
 2025-08-13 23:13:31,931 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:13:31] "GET /api/market-status HTTP/1.1" 200 -
 2025-08-13 23:14:02,122 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:14:02] "GET /api/market-status HTTP/1.1" 200 -
 2025-08-13 23:14:32,264 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:14:32] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:15:21,365 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:15:21] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:15:30,144 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:15:30] "GET /api/symbols/available HTTP/1.1" 200 -
+2025-08-13 23:15:31,598 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:15:31] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:16:02,123 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:16:02] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:16:32,796 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:16:32] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:17:21,668 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:17:21] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:17:46,762 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:17:46] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:18:02,025 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:18:02] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:18:31,954 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:18:31] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:19:21,072 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:19:21] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:20:21,000 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:20:21] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:21:21,156 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:21:21] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:22:21,425 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:22:21] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:23:21,021 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:23:21] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:23:54,758 - src.data_collector - INFO - Initializing Simple Data Collector
+2025-08-13 23:23:54,758 - src.data_collector - INFO - Initializing Simple Data Collector
+2025-08-13 23:23:54,758 - src.ml_predictor - INFO - Simple ML Predictor initialized
+2025-08-13 23:23:54,758 - src.data_collector - INFO - Initializing Simple Data Collector
+2025-08-13 23:23:54,759 - src.risk_calculator - INFO - Simple Risk Calculator initialized
+2025-08-13 23:23:54,759 - src.data_collector - INFO - Initializing Simple Data Collector
+2025-08-13 23:23:54,759 - src.portfolio_manager - INFO - Simple Portfolio Manager initialized
+2025-08-13 23:23:54,759 - src.data_collector - INFO - Initializing Simple Data Collector
+2025-08-13 23:23:54,759 - src.monte_carlo - INFO - Simple Monte Carlo Simulator initialized
+2025-08-13 23:23:54,759 - __main__ - INFO - All system components initialized successfully
+2025-08-13 23:23:54,767 - __main__ - INFO - Starting Enhanced Financial Risk Prediction System
+2025-08-13 23:23:54,767 - __main__ - INFO - Global Markets Supported: US, NGN, UK, CA, AU, JP, DE, CRYPTO
+2025-08-13 23:23:54,826 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.100:5000
+2025-08-13 23:23:54,826 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-13 23:23:54,827 - werkzeug - INFO -  * Restarting with stat
+2025-08-13 23:23:56,746 - src.data_collector - INFO - Initializing Simple Data Collector
+2025-08-13 23:23:56,746 - src.data_collector - INFO - Initializing Simple Data Collector
+2025-08-13 23:23:56,746 - src.ml_predictor - INFO - Simple ML Predictor initialized
+2025-08-13 23:23:56,747 - src.data_collector - INFO - Initializing Simple Data Collector
+2025-08-13 23:23:56,747 - src.risk_calculator - INFO - Simple Risk Calculator initialized
+2025-08-13 23:23:56,747 - src.data_collector - INFO - Initializing Simple Data Collector
+2025-08-13 23:23:56,747 - src.portfolio_manager - INFO - Simple Portfolio Manager initialized
+2025-08-13 23:23:56,748 - src.data_collector - INFO - Initializing Simple Data Collector
+2025-08-13 23:23:56,748 - src.monte_carlo - INFO - Simple Monte Carlo Simulator initialized
+2025-08-13 23:23:56,748 - __main__ - INFO - All system components initialized successfully
+2025-08-13 23:23:56,756 - __main__ - INFO - Starting Enhanced Financial Risk Prediction System
+2025-08-13 23:23:56,756 - __main__ - INFO - Global Markets Supported: US, NGN, UK, CA, AU, JP, DE, CRYPTO
+2025-08-13 23:23:56,790 - werkzeug - WARNING -  * Debugger is active!
+2025-08-13 23:23:56,796 - werkzeug - INFO -  * Debugger PIN: 142-585-980
+2025-08-13 23:24:02,703 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:24:02] "GET / HTTP/1.1" 200 -
+2025-08-13 23:24:02,855 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:24:02] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:24:02,855 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:24:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:24:02,856 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:24:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:24:03,722 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:24:03] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:24:04,267 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:24:04] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:24:09,191 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:24:09] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:24:09,892 - src.risk_calculator - INFO - Calculating risk for portfolio: ['AAPL', 'MSFT', 'GOOGL', 'TSLA'] with weights: [0.25, 0.25, 0.25, 0.25]
+2025-08-13 23:24:09,892 - src.risk_calculator - INFO - Fetching data for AAPL
+2025-08-13 23:24:10,498 - src.data_collector - INFO - Successfully fetched 192 data points for AAPL
+2025-08-13 23:24:10,501 - src.risk_calculator - INFO - Fetching data for MSFT
+2025-08-13 23:24:10,722 - src.data_collector - INFO - Successfully fetched 192 data points for MSFT
+2025-08-13 23:24:10,723 - src.risk_calculator - INFO - Fetching data for GOOGL
+2025-08-13 23:24:10,960 - src.data_collector - INFO - Successfully fetched 192 data points for GOOGL
+2025-08-13 23:24:10,963 - src.risk_calculator - INFO - Fetching data for TSLA
+2025-08-13 23:24:11,185 - src.data_collector - INFO - Successfully fetched 192 data points for TSLA
+2025-08-13 23:24:11,188 - src.risk_calculator - INFO - Risk calculation completed successfully. Historical VaR: 0.0303
+2025-08-13 23:24:11,189 - src.monte_carlo - INFO - Running Monte Carlo simulation with 10000 iterations
+2025-08-13 23:24:11,427 - src.data_collector - INFO - Successfully fetched 192 data points for AAPL
+2025-08-13 23:24:11,751 - src.data_collector - INFO - Successfully fetched 192 data points for MSFT
+2025-08-13 23:24:12,066 - src.data_collector - INFO - Successfully fetched 192 data points for GOOGL
+2025-08-13 23:24:12,384 - src.data_collector - INFO - Successfully fetched 192 data points for TSLA
+2025-08-13 23:24:12,387 - src.monte_carlo - INFO - Monte Carlo simulation completed. VaR 95%: 0.0341
+2025-08-13 23:24:12,388 - src.ml_predictor - INFO - Generating ML predictions for symbols: ['AAPL', 'MSFT', 'GOOGL', 'TSLA']
+2025-08-13 23:24:12,605 - src.data_collector - INFO - Successfully fetched 61 data points for AAPL
+2025-08-13 23:24:12,821 - src.data_collector - INFO - Successfully fetched 61 data points for MSFT
+2025-08-13 23:24:13,049 - src.data_collector - INFO - Successfully fetched 61 data points for GOOGL
+2025-08-13 23:24:13,299 - src.data_collector - INFO - Successfully fetched 61 data points for TSLA
+2025-08-13 23:24:13,300 - src.ml_predictor - INFO - ML predictions generated for 4 symbols
+2025-08-13 23:24:13,303 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:24:13] "POST /api/risk-analysis HTTP/1.1" 200 -
+2025-08-13 23:24:23,216 - src.risk_calculator - INFO - Calculating risk for portfolio: ['AAPL', 'MSFT', 'GOOGL', 'TSLA'] with weights: [0.25, 0.25, 0.25, 0.25]
+2025-08-13 23:24:23,216 - src.risk_calculator - INFO - Fetching data for AAPL
+2025-08-13 23:24:23,980 - src.data_collector - INFO - Successfully fetched 192 data points for AAPL
+2025-08-13 23:24:23,982 - src.risk_calculator - INFO - Fetching data for MSFT
+2025-08-13 23:24:24,197 - src.data_collector - INFO - Successfully fetched 192 data points for MSFT
+2025-08-13 23:24:24,199 - src.risk_calculator - INFO - Fetching data for GOOGL
+2025-08-13 23:24:24,403 - src.data_collector - INFO - Successfully fetched 192 data points for GOOGL
+2025-08-13 23:24:24,405 - src.risk_calculator - INFO - Fetching data for TSLA
+2025-08-13 23:24:24,621 - src.data_collector - INFO - Successfully fetched 192 data points for TSLA
+2025-08-13 23:24:24,625 - src.risk_calculator - INFO - Risk calculation completed successfully. Historical VaR: 0.2939
+2025-08-13 23:24:24,625 - src.monte_carlo - INFO - Running Monte Carlo simulation with 10000 iterations
+2025-08-13 23:24:24,869 - src.data_collector - INFO - Successfully fetched 192 data points for AAPL
+2025-08-13 23:24:25,105 - src.data_collector - INFO - Successfully fetched 192 data points for MSFT
+2025-08-13 23:24:25,332 - src.data_collector - INFO - Successfully fetched 192 data points for GOOGL
+2025-08-13 23:24:25,519 - src.data_collector - INFO - Successfully fetched 192 data points for TSLA
+2025-08-13 23:24:25,522 - src.monte_carlo - INFO - Monte Carlo simulation completed. VaR 95%: 0.1457
+2025-08-13 23:24:25,522 - src.ml_predictor - INFO - Generating ML predictions for symbols: ['AAPL', 'MSFT', 'GOOGL', 'TSLA']
+2025-08-13 23:24:25,797 - src.data_collector - INFO - Successfully fetched 61 data points for AAPL
+2025-08-13 23:24:26,000 - src.data_collector - INFO - Successfully fetched 61 data points for MSFT
+2025-08-13 23:24:26,205 - src.data_collector - INFO - Successfully fetched 61 data points for GOOGL
+2025-08-13 23:24:26,410 - src.data_collector - INFO - Successfully fetched 61 data points for TSLA
+2025-08-13 23:24:26,411 - src.ml_predictor - INFO - ML predictions generated for 4 symbols
+2025-08-13 23:24:26,413 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:24:26] "POST /api/risk-analysis HTTP/1.1" 200 -
+2025-08-13 23:24:30,039 - src.portfolio_manager - INFO - Optimizing portfolio for symbols: ['AAPL', 'MSFT', 'GOOGL', 'TSLA'] using method: max_sharpe
+2025-08-13 23:24:30,597 - src.data_collector - INFO - Successfully fetched 61 data points for AAPL
+2025-08-13 23:24:30,897 - src.data_collector - INFO - Successfully fetched 61 data points for MSFT
+2025-08-13 23:24:31,080 - src.data_collector - INFO - Successfully fetched 61 data points for GOOGL
+2025-08-13 23:24:31,282 - src.data_collector - INFO - Successfully fetched 61 data points for TSLA
+2025-08-13 23:24:31,284 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:24:31] "POST /api/portfolio-optimization HTTP/1.1" 200 -
+2025-08-13 23:24:34,406 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:24:34] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:24:43,205 - src.risk_calculator - INFO - Calculating risk for portfolio: ['AAPL', 'MSFT', 'GOOGL', 'TSLA'] with weights: [0.205, 0.395, 0.392, 0.006999999999999999]
+2025-08-13 23:24:43,205 - src.risk_calculator - WARNING - Weights don't sum to 1, normalizing...
+2025-08-13 23:24:43,205 - src.risk_calculator - INFO - Fetching data for AAPL
+2025-08-13 23:24:44,036 - src.data_collector - INFO - Successfully fetched 192 data points for AAPL
+2025-08-13 23:24:44,039 - src.risk_calculator - INFO - Fetching data for MSFT
+2025-08-13 23:24:44,286 - src.data_collector - INFO - Successfully fetched 192 data points for MSFT
+2025-08-13 23:24:44,288 - src.risk_calculator - INFO - Fetching data for GOOGL
+2025-08-13 23:24:44,551 - src.data_collector - INFO - Successfully fetched 192 data points for GOOGL
+2025-08-13 23:24:44,553 - src.risk_calculator - INFO - Fetching data for TSLA
+2025-08-13 23:24:44,792 - src.data_collector - INFO - Successfully fetched 192 data points for TSLA
+2025-08-13 23:24:44,796 - src.risk_calculator - INFO - Risk calculation completed successfully. Historical VaR: 0.0233
+2025-08-13 23:24:44,797 - src.risk_calculator - INFO - Calculating risk for portfolio: ['AAPL', 'MSFT', 'GOOGL', 'TSLA'] with weights: [0.205, 0.395, 0.392, 0.006999999999999999]
+2025-08-13 23:24:44,797 - src.risk_calculator - WARNING - Weights don't sum to 1, normalizing...
+2025-08-13 23:24:44,797 - src.risk_calculator - INFO - Fetching data for AAPL
+2025-08-13 23:24:45,080 - src.data_collector - INFO - Successfully fetched 192 data points for AAPL
+2025-08-13 23:24:45,082 - src.risk_calculator - INFO - Fetching data for MSFT
+2025-08-13 23:24:45,373 - src.data_collector - INFO - Successfully fetched 192 data points for MSFT
+2025-08-13 23:24:45,375 - src.risk_calculator - INFO - Fetching data for GOOGL
+2025-08-13 23:24:45,652 - src.data_collector - INFO - Successfully fetched 192 data points for GOOGL
+2025-08-13 23:24:45,654 - src.risk_calculator - INFO - Fetching data for TSLA
+2025-08-13 23:24:45,923 - src.data_collector - INFO - Successfully fetched 192 data points for TSLA
+2025-08-13 23:24:45,927 - src.risk_calculator - INFO - Risk calculation completed successfully. Historical VaR: 0.0233
+2025-08-13 23:24:45,927 - src.risk_calculator - INFO - Calculating risk for portfolio: ['AAPL', 'MSFT', 'GOOGL', 'TSLA'] with weights: [0.205, 0.395, 0.392, 0.006999999999999999]
+2025-08-13 23:24:45,927 - src.risk_calculator - WARNING - Weights don't sum to 1, normalizing...
+2025-08-13 23:24:45,927 - src.risk_calculator - INFO - Fetching data for AAPL
+2025-08-13 23:24:46,258 - src.data_collector - INFO - Successfully fetched 192 data points for AAPL
+2025-08-13 23:24:46,260 - src.risk_calculator - INFO - Fetching data for MSFT
+2025-08-13 23:24:46,645 - src.data_collector - INFO - Successfully fetched 192 data points for MSFT
+2025-08-13 23:24:46,647 - src.risk_calculator - INFO - Fetching data for GOOGL
+2025-08-13 23:24:46,904 - src.data_collector - INFO - Successfully fetched 192 data points for GOOGL
+2025-08-13 23:24:46,907 - src.risk_calculator - INFO - Fetching data for TSLA
+2025-08-13 23:24:47,114 - src.data_collector - INFO - Successfully fetched 192 data points for TSLA
+2025-08-13 23:24:47,119 - src.risk_calculator - INFO - Risk calculation completed successfully. Historical VaR: 0.0233
+2025-08-13 23:24:47,120 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:24:47] "POST /api/stress-test HTTP/1.1" 200 -
+2025-08-13 23:25:04,247 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:25:04] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:25:34,177 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:25:34] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:26:04,189 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:04] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:26:34,641 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:34] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:26:40,947 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:40] "GET / HTTP/1.1" 200 -
+2025-08-13 23:26:40,993 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:26:41,011 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:41] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:41,015 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:41] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:42,544 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:42] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:26:46,584 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:46] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:26:48,876 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:48] "GET / HTTP/1.1" 200 -
+2025-08-13 23:26:48,909 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:26:48,914 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:48,916 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:48] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:49,995 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:49] "GET / HTTP/1.1" 200 -
+2025-08-13 23:26:50,023 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:26:50,026 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:50,028 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:50] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:50,046 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:50] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:26:51,298 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:51] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:26:51,871 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:51] "GET / HTTP/1.1" 200 -
+2025-08-13 23:26:51,899 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:26:51,903 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:51] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:51,904 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:51] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:52,873 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:52] "GET / HTTP/1.1" 200 -
+2025-08-13 23:26:52,904 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:26:52,910 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:52,911 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:52] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:53,344 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:53] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:26:53,772 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:53] "GET / HTTP/1.1" 200 -
+2025-08-13 23:26:53,806 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:26:53,811 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:53] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:53,811 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:53] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:54,128 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:54] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:26:55,100 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:55] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:26:55,388 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:55] "GET / HTTP/1.1" 200 -
+2025-08-13 23:26:55,416 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:26:55,420 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:55] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:55,420 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:55] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:55,596 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:55] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:26:56,679 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:56] "GET / HTTP/1.1" 200 -
+2025-08-13 23:26:56,693 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:56] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:26:56,711 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:26:56,715 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:56,715 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:56] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:57,507 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:57] "GET / HTTP/1.1" 200 -
+2025-08-13 23:26:57,537 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:26:57,537 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:57] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:57,537 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:57] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:58,108 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:58] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:26:58,984 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:58] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:26:59,134 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:59] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:26:59,960 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:59] "GET / HTTP/1.1" 200 -
+2025-08-13 23:26:59,986 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:26:59,990 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:26:59,990 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:26:59] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:00,489 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:00] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:27:01,362 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:01] "GET / HTTP/1.1" 200 -
+2025-08-13 23:27:01,391 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:27:01,393 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:01,396 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:01] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:01,836 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:01] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:02,312 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:02] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:27:02,678 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:02] "GET / HTTP/1.1" 200 -
+2025-08-13 23:27:02,711 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:27:02,716 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:02,716 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:02] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:02,747 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:02] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:03,600 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:03] "GET / HTTP/1.1" 200 -
+2025-08-13 23:27:03,632 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:27:03,636 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:03,638 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:03] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:03,868 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:03] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:04,742 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:04] "GET / HTTP/1.1" 200 -
+2025-08-13 23:27:04,778 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:27:04,782 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:04,783 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:04] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:04,796 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:04] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:05,052 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:05] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:27:05,955 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:05] "GET / HTTP/1.1" 200 -
+2025-08-13 23:27:05,994 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:27:06,000 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:06,004 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:06] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:06,672 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:06] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:06,821 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:06] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:27:08,814 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:08] "GET / HTTP/1.1" 200 -
+2025-08-13 23:27:08,841 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:27:08,844 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:08,848 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:08] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:10,142 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:10] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:10,148 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:10] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:27:10,188 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:10] "GET / HTTP/1.1" 200 -
+2025-08-13 23:27:10,221 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:27:10,225 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:10,228 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:10] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:11,486 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:11] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:11,488 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:11] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:27:14,268 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:14] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:27:15,673 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:15] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:27:15,983 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:15] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:16,428 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:16] "GET / HTTP/1.1" 200 -
+2025-08-13 23:27:16,453 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:27:16,457 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:16,459 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:16] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:17,351 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:17] "GET / HTTP/1.1" 200 -
+2025-08-13 23:27:17,377 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:27:17,380 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:17] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:17,382 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:17] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:17,712 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:17] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:18,132 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:18] "GET / HTTP/1.1" 200 -
+2025-08-13 23:27:18,154 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:27:18,159 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:18] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:18,160 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:18] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:18,669 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:18] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:18,917 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:18] "GET / HTTP/1.1" 200 -
+2025-08-13 23:27:18,941 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:27:18,949 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:18] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:18,950 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:18] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:19,318 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:19] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:19,479 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:19] "GET / HTTP/1.1" 200 -
+2025-08-13 23:27:19,509 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:27:19,521 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:19] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:19,521 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:19] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:20,046 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:20] "GET / HTTP/1.1" 200 -
+2025-08-13 23:27:20,069 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:27:20,072 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:20,072 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:20] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:20,197 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:20] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:20,607 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:20] "GET / HTTP/1.1" 200 -
+2025-08-13 23:27:20,645 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:27:20,650 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:20,651 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:20] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:20,666 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:20] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:21,068 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:21] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:21,141 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:21] "GET / HTTP/1.1" 200 -
+2025-08-13 23:27:21,166 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:27:21,176 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:21] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:21,177 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:21] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:21,695 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:21] "GET / HTTP/1.1" 200 -
+2025-08-13 23:27:21,731 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:27:21,735 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:21] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:21,737 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:21] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:27:22,267 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:22] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:22,814 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:22] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:22,836 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:22] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:27:27,010 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:27] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:27:53,243 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:27:53] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:28:22,922 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:28:22] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:28:53,517 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:28:53] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:28:56,858 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:28:56] "GET / HTTP/1.1" 200 -
+2025-08-13 23:28:56,890 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:28:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:28:56,904 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:28:56] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-08-13 23:28:56,904 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:28:56] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:28:58,159 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:28:58] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:29:01,977 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:01] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:29:28,289 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:28] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:29:33,477 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:33] "GET / HTTP/1.1" 200 -
+2025-08-13 23:29:33,507 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:29:33,514 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:33] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-08-13 23:29:33,516 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:33] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:29:35,714 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:35] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:29:36,725 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:36] "GET / HTTP/1.1" 200 -
+2025-08-13 23:29:36,753 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:29:36,758 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:29:36,761 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:36] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:29:37,386 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:37] "GET / HTTP/1.1" 200 -
+2025-08-13 23:29:37,418 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:29:37,421 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:29:37,422 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:37] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:29:38,073 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:38] "GET / HTTP/1.1" 200 -
+2025-08-13 23:29:38,103 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:29:38,108 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:38] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:29:38,109 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:38] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:29:38,152 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:38] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:29:38,292 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:38] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:29:38,617 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:38] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:29:39,286 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:39] "GET / HTTP/1.1" 200 -
+2025-08-13 23:29:39,317 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:29:39,321 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:39] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:29:39,324 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:29:39,494 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:39] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:29:40,926 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:40] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:29:43,178 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:43] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:29:44,373 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:44] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:29:59,111 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:59] "GET / HTTP/1.1" 200 -
+2025-08-13 23:29:59,143 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:29:59,149 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:59] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-08-13 23:29:59,152 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:29:59] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:30:00,197 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:00] "GET / HTTP/1.1" 200 -
+2025-08-13 23:30:00,229 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:30:00,234 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:00] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:30:00,236 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:00] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:30:01,194 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:01] "GET / HTTP/1.1" 200 -
+2025-08-13 23:30:01,225 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:30:01,231 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:30:01,232 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:01] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:30:01,463 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:01] "GET / HTTP/1.1" 200 -
+2025-08-13 23:30:02,489 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:02] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:30:02,738 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:02] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:30:02,880 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:02] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:30:03,884 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:03] "GET / HTTP/1.1" 200 -
+2025-08-13 23:30:03,915 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:30:03,922 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:30:03,923 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:03] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:30:05,226 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:05] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:30:06,440 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:06] "POST /api/live-quotes HTTP/1.1" 200 -
+2025-08-13 23:30:07,090 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:07] "GET / HTTP/1.1" 200 -
+2025-08-13 23:30:07,124 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-13 23:30:07,129 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-08-13 23:30:07,131 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:07] "[36mGET /static/js/risk-analysis.js HTTP/1.1[0m" 304 -
+2025-08-13 23:30:08,211 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:08] "GET /api/market-status HTTP/1.1" 200 -
+2025-08-13 23:30:08,620 - werkzeug - INFO - 127.0.0.1 - - [13/Aug/2025 23:30:08] "POST /api/live-quotes HTTP/1.1" 200 -

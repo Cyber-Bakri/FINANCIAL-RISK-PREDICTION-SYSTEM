@@ -339,38 +339,51 @@ function setupBasicEventListeners() {
         symbolsInput.addEventListener('input', validatePortfolioInputs);
     }
     
-    if (weightsInput) {
-        weightsInput.addEventListener('input', validatePortfolioInputs);
+    const amountsInput = document.getElementById('amounts');
+    if (amountsInput) {
+        amountsInput.addEventListener('input', validatePortfolioInputs);
     }
 }
 
 // Validate portfolio inputs
 function validatePortfolioInputs() {
     const symbolsInput = document.getElementById('symbols');
+    const amountsInput = document.getElementById('amounts');
     const weightsInput = document.getElementById('weights');
+    const totalValueInput = document.getElementById('totalValue');
     
-    if (!symbolsInput || !weightsInput) return;
+    if (!symbolsInput || !amountsInput || !weightsInput || !totalValueInput) return;
     
     const symbols = symbolsInput.value.split(',').map(s => s.trim()).filter(s => s);
-    const weights = weightsInput.value.split(',').map(w => parseFloat(w.trim())).filter(w => !isNaN(w));
+    const amounts = amountsInput.value.split(',').map(a => parseFloat(a.trim())).filter(a => !isNaN(a) && a > 0);
     
     // Reset styles
     symbolsInput.classList.remove('is-invalid', 'is-valid');
-    weightsInput.classList.remove('is-invalid', 'is-valid');
+    amountsInput.classList.remove('is-invalid', 'is-valid');
     
-    if (symbols.length === weights.length && symbols.length > 0) {
-        const totalWeight = weights.reduce((sum, w) => sum + w, 0);
+    // Auto-calculate weights and total when amounts change
+    if (amounts.length > 0) {
+        const total = amounts.reduce((sum, amount) => sum + amount, 0);
+        const weights = amounts.map(amount => ((amount / total) * 100).toFixed(2));
         
-        if (Math.abs(totalWeight - 100) < 0.01) {
+        weightsInput.value = weights.join(',');
+        totalValueInput.value = `$${total.toLocaleString()}`;
+    }
+    
+    // Validate inputs
+    if (symbols.length === amounts.length && symbols.length > 0) {
+        const validAmounts = amounts.every(a => a >= 100); // Minimum $100 per stock
+        
+        if (validAmounts) {
             symbolsInput.classList.add('is-valid');
-            weightsInput.classList.add('is-valid');
+            amountsInput.classList.add('is-valid');
         } else {
-            weightsInput.classList.add('is-invalid');
+            amountsInput.classList.add('is-invalid');
         }
-    } else if (symbols.length > 0 || weights.length > 0) {
-        if (symbols.length !== weights.length) {
+    } else if (symbols.length > 0 || amounts.length > 0) {
+        if (symbols.length !== amounts.length) {
             symbolsInput.classList.add('is-invalid');
-            weightsInput.classList.add('is-invalid');
+            amountsInput.classList.add('is-invalid');
         }
     }
 }
@@ -829,12 +842,12 @@ function showNotification(message, type = 'info') {
 
 // Quick symbol addition function
 function addQuickSymbol(symbol, name) {
-    // Get current symbols and weights
+    // Get current symbols and amounts
     const symbolsInput = document.getElementById('symbols');
-    const weightsInput = document.getElementById('weights');
+    const amountsInput = document.getElementById('amounts');
     
     const currentSymbols = symbolsInput.value ? symbolsInput.value.split(',').map(s => s.trim()) : [];
-    const currentWeights = weightsInput.value ? weightsInput.value.split(',').map(w => parseFloat(w.trim())) : [];
+    const currentAmounts = amountsInput.value ? amountsInput.value.split(',').map(a => parseFloat(a.trim())) : [];
     
     // Check if symbol already exists
     if (currentSymbols.includes(symbol)) {
@@ -845,35 +858,40 @@ function addQuickSymbol(symbol, name) {
     // Add new symbol
     currentSymbols.push(symbol);
     
-    // Calculate equal weights
-    const equalWeight = Math.round(100 / currentSymbols.length);
-    const newWeights = new Array(currentSymbols.length).fill(equalWeight);
-    
-    // Adjust for rounding to ensure sum = 100
-    const sum = newWeights.reduce((a, b) => a + b, 0);
-    const diff = 100 - sum;
-    if (diff !== 0) {
-        newWeights[0] += diff;
+    // Calculate amount for new symbol (default $25,000 or maintain average)
+    let newAmount = 25000;
+    if (currentAmounts.length > 0) {
+        const avgAmount = currentAmounts.reduce((sum, a) => sum + a, 0) / currentAmounts.length;
+        newAmount = Math.round(avgAmount);
     }
+    
+    currentAmounts.push(newAmount);
     
     // Update inputs
     symbolsInput.value = currentSymbols.join(',');
-    weightsInput.value = newWeights.join(',');
+    amountsInput.value = currentAmounts.join(',');
     
-    showNotification(`Added ${symbol} (${name}) to portfolio`, 'success');
+    showNotification(`Added ${symbol} (${name}) - $${newAmount.toLocaleString()}`, 'success');
+    
+    // Trigger validation to calculate weights and total
+    validatePortfolioInputs();
+    setTimeout(loadLiveQuotes, 500);
 }
 
 // Clear portfolio function
 function clearPortfolio() {
     document.getElementById('symbols').value = '';
+    document.getElementById('amounts').value = '';
     document.getElementById('weights').value = '';
+    document.getElementById('totalValue').value = '$0';
     showNotification('Portfolio cleared', 'info');
+    validatePortfolioInputs();
 }
 
 // Load sample portfolio function
 function loadSamplePortfolio() {
     document.getElementById('symbols').value = 'AAPL,MSFT,GOOGL,TSLA,SPY';
-    document.getElementById('weights').value = '20,20,20,20,20';
+    document.getElementById('amounts').value = '20000,20000,20000,20000,20000';
     showNotification('Sample portfolio loaded successfully', 'success');
     validatePortfolioInputs();
 }

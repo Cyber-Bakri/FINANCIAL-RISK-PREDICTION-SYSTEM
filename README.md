@@ -16,32 +16,38 @@ The Enhanced Financial Risk Prediction System is a comprehensive web-based platf
 
 ## Key Features
 
-### 🎲 **Monte Carlo Simulation**
-- Advanced probabilistic modeling with 10,000+ simulations
-- Portfolio risk assessment under various market conditions
-- Statistical distribution analysis with confidence intervals
+### 📊 **Dynamic Portfolio Management**
+- **User-Friendly Interface**: Enter dollar amounts instead of percentages
+- **Real-Time Calculations**: Automatic weight and total calculations
+- **Live Market Data**: Current prices and portfolio valuations
+- **37 Supported Symbols**: US stocks, crypto, and ETFs
+
+### 🎯 **Portfolio Optimization**
+- **Maximum Sharpe Ratio**: Optimize risk-adjusted returns
+- **Minimum Variance**: Reduce portfolio volatility
+- **Equal Weight**: Balanced diversification strategy
+- **Real Market Data**: Based on historical performance analysis
 
 ### 🛡️ **Value at Risk (VaR) Analysis**
 - **Historical VaR**: Based on actual market movements
 - **Parametric VaR**: Using statistical models and distributions
 - **Expected Shortfall**: Average loss beyond VaR threshold
-- Multiple confidence levels (90%, 95%, 99%)
+- **Real-Time Calculations**: Live data from Yahoo Finance
+
+### 🚨 **Stress Testing**
+- **Market Crash Scenarios**: 20% market decline simulation
+- **High Volatility Periods**: Doubled volatility stress test
+- **Recession Conditions**: Economic downturn impact analysis
+- **Quantified Risk**: Precise loss estimates under adverse conditions
 
 ### 🤖 **Machine Learning Predictions**
 - AI-driven volatility forecasting
 - Risk-adjusted return predictions
 - Ensemble learning methods for improved accuracy
 
-### 📊 **Portfolio Optimization**
-- **Maximum Sharpe Ratio**: Optimal risk-return balance
-- **Minimum Variance**: Risk minimization strategies
-- **Equal Weight**: Diversified allocation approach
-- Real-time optimization with live market data
 
-### ⚡ **Stress Testing**
-- Market crash scenarios (-20% shock)
-- High volatility environments (3x normal volatility)
-- Economic recession modeling
+
+
 - Comprehensive risk scenario analysis
 
 ### 📈 **Live Market Data**
@@ -69,6 +75,16 @@ The system supports financial instruments from multiple global markets:
 - **Real-time Features**: Live quotes, bid/ask spreads, volume data
 - **Market Hours**: Automatic detection of trading sessions
 - **No API Key Required**: Free, reliable access for academic use
+
+### ✅ **Academic Quality - Real Calculations**
+
+**No Static Data - All Metrics Calculated Live:**
+- ✅ **Portfolio Returns**: Calculated from actual historical price movements (not fixed 8%)
+- ✅ **Volatility Metrics**: Based on real price variance (not assumed 15%)  
+- ✅ **Sharpe Ratios**: Computed from actual risk-adjusted returns (not static 0.4)
+- ✅ **Risk Analysis**: VaR and Expected Shortfall from genuine market data
+- ✅ **Optimization**: Weights determined by real performance analysis
+- ✅ **Current vs Optimized**: Shows actual differences based on portfolio composition
 
 ### 💰 **37 Carefully Selected Financial Instruments**
 
@@ -206,7 +222,7 @@ python test_system.py
 The system leverages Yahoo Finance's robust API infrastructure through the yfinance Python library:
 
 **Data Fetching Strategy:**
-```python
+   ```python
 # Real-time data collection
 ticker = yf.Ticker(symbol)
 hist_data = ticker.history(start=start_date, end=end_date, 

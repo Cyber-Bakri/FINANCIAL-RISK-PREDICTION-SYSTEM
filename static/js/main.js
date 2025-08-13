@@ -138,15 +138,20 @@ const Utils = {
 
     // Validate portfolio inputs
     validatePortfolioInputs: function() {
+        // Make sure portfolio data is up to date
+        if (typeof updatePortfolioData === 'function') {
+            updatePortfolioData();
+        }
+        
         const symbols = document.getElementById('symbols').value.trim();
         const weights = document.getElementById('weights').value.trim();
         
         if (!symbols) {
-            throw new Error('Please enter at least one asset symbol');
+            throw new Error('Please add at least one asset to your portfolio');
         }
 
         if (!weights) {
-            throw new Error('Please enter portfolio weights');
+            throw new Error('Please enter investment amounts for your assets');
         }
 
         const symbolArray = symbols.split(',').map(s => s.trim()).filter(s => s);
@@ -176,7 +181,7 @@ const Utils = {
             weights: validation.weights,
             confidence_level: parseFloat(document.getElementById('confidenceLevel').value),
             time_horizon: parseInt(document.getElementById('timeHorizon').value),
-            portfolio_value: parseFloat(document.getElementById('portfolioValue').value)
+            portfolio_value: getTotalPortfolioValue()
         };
     }
 };
@@ -323,8 +328,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize basic functionality
     setupBasicEventListeners();
     
-    // Load default portfolio
-    loadDefaultPortfolio();
+    // Initialize portfolio with default assets
+    loadSamplePortfolio();
     
     console.log('System initialized successfully');
 });
@@ -345,47 +350,188 @@ function setupBasicEventListeners() {
     }
 }
 
+// Portfolio management with dynamic asset rows
+let portfolioAssets = [];
+
+// Add a new asset row
+function addAssetRow(symbol = '', amount = 25000) {
+    const portfolioContainer = document.getElementById('portfolioAssets');
+    const index = portfolioAssets.length;
+    
+    const assetRow = document.createElement('div');
+    assetRow.className = 'row mb-2 asset-row';
+    assetRow.id = `asset-${index}`;
+    
+    assetRow.innerHTML = `
+        <div class="col-md-4">
+            <input type="text" class="form-control symbol-input" 
+                   placeholder="e.g., AAPL" 
+                   value="${symbol}"
+                   onchange="updatePortfolioData()"
+                   style="text-transform: uppercase;">
+        </div>
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="number" class="form-control amount-input" 
+                       placeholder="25000" 
+                       value="${amount}"
+                       min="100" 
+                       step="100"
+                       onchange="updatePortfolioData()">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <span class="weight-display text-muted">0%</span>
+        </div>
+        <div class="col-md-1">
+            <button type="button" class="btn btn-outline-danger btn-sm" onclick="removeAssetRow(${index})">
+                <i class="fas fa-trash"></i>
+            </button>
+        </div>
+    `;
+    
+    portfolioContainer.appendChild(assetRow);
+    portfolioAssets.push({symbol, amount});
+    updatePortfolioData();
+}
+
+// Remove an asset row
+function removeAssetRow(index) {
+    const assetRow = document.getElementById(`asset-${index}`);
+    if (assetRow) {
+        assetRow.remove();
+        portfolioAssets.splice(index, 1);
+        
+        // Re-index remaining rows
+        const remainingRows = document.querySelectorAll('.asset-row');
+        remainingRows.forEach((row, newIndex) => {
+            row.id = `asset-${newIndex}`;
+            const removeBtn = row.querySelector('button');
+            removeBtn.setAttribute('onclick', `removeAssetRow(${newIndex})`);
+        });
+        
+        updatePortfolioData();
+    }
+}
+
+// Update portfolio with optimized weights
+function updatePortfolioWithOptimizedWeights(optimizedWeights) {
+    console.log('updatePortfolioWithOptimizedWeights called with:', optimizedWeights);
+    
+    const totalValue = getTotalPortfolioValue();
+    const assetRows = document.querySelectorAll('.asset-row');
+    
+    console.log('Total portfolio value:', totalValue);
+    console.log('Number of asset rows found:', assetRows.length);
+    
+    let updated = false;
+    
+    assetRows.forEach((row, index) => {
+        const symbolInput = row.querySelector('.symbol-input');
+        const amountInput = row.querySelector('.amount-input');
+        
+        if (!symbolInput || !amountInput) {
+            console.warn(`Row ${index}: Missing input elements`);
+            return;
+        }
+        
+        const symbol = symbolInput.value.trim().toUpperCase();
+        const weight = optimizedWeights[symbol];
+        
+        console.log(`Row ${index}: Symbol=${symbol}, Weight=${weight}`);
+        
+        if (weight && totalValue > 0) {
+            const newAmount = Math.round(totalValue * weight);
+            console.log(`Updating ${symbol}: $${amountInput.value} -> $${newAmount}`);
+            amountInput.value = newAmount;
+            updated = true;
+        }
+    });
+    
+    if (updated) {
+        console.log('Portfolio amounts updated, recalculating...');
+        // Update the portfolio data
+        updatePortfolioData();
+    } else {
+        console.warn('No portfolio amounts were updated');
+    }
+}
+
+// Get total portfolio value (for optimization updates)
+function getTotalPortfolioValue() {
+    const totalValueElement = document.getElementById('totalValue');
+    if (totalValueElement) {
+        const totalText = totalValueElement.textContent || totalValueElement.innerText || '$0';
+        const numericValue = parseFloat(totalText.replace(/[$,]/g, ''));
+        return isNaN(numericValue) ? 100000 : numericValue;
+    }
+    return 100000;
+}
+
+// Update portfolio data and hidden fields
+function updatePortfolioData() {
+    const assetRows = document.querySelectorAll('.asset-row');
+    const symbols = [];
+    const amounts = [];
+    let total = 0;
+    
+    assetRows.forEach((row, index) => {
+        const symbolInput = row.querySelector('.symbol-input');
+        const amountInput = row.querySelector('.amount-input');
+        const weightDisplay = row.querySelector('.weight-display');
+        
+        const symbol = symbolInput.value.trim().toUpperCase();
+        const amount = parseFloat(amountInput.value) || 0;
+        
+        if (symbol && amount > 0) {
+            symbols.push(symbol);
+            amounts.push(amount);
+            total += amount;
+        }
+        
+        // Update the symbol input to uppercase
+        symbolInput.value = symbol;
+    });
+    
+    // Calculate and display weights
+    assetRows.forEach((row, index) => {
+        const amountInput = row.querySelector('.amount-input');
+        const weightDisplay = row.querySelector('.weight-display');
+        const amount = parseFloat(amountInput.value) || 0;
+        
+        if (total > 0 && amount > 0) {
+            const weight = ((amount / total) * 100).toFixed(1);
+            weightDisplay.textContent = `${weight}%`;
+        } else {
+            weightDisplay.textContent = '0%';
+        }
+    });
+    
+    // Update summary
+    document.getElementById('totalValue').textContent = `$${total.toLocaleString()}`;
+    document.getElementById('assetCount').textContent = symbols.length;
+    
+    // Update hidden fields for backend compatibility
+    document.getElementById('symbols').value = symbols.join(',');
+    const weights = amounts.map(amount => total > 0 ? ((amount / total) * 100).toFixed(2) : 0);
+    document.getElementById('weights').value = weights.join(',');
+    
+    // Update portfolioAssets array
+    portfolioAssets = symbols.map((symbol, index) => ({
+        symbol,
+        amount: amounts[index] || 0
+    }));
+}
+
 // Validate portfolio inputs
 function validatePortfolioInputs() {
-    const symbolsInput = document.getElementById('symbols');
-    const amountsInput = document.getElementById('amounts');
-    const weightsInput = document.getElementById('weights');
-    const totalValueInput = document.getElementById('totalValue');
+    updatePortfolioData();
+    const symbols = document.getElementById('symbols').value.split(',').filter(s => s.trim());
+    const hasValidAssets = symbols.length > 0 && portfolioAssets.every(asset => asset.amount >= 100);
     
-    if (!symbolsInput || !amountsInput || !weightsInput || !totalValueInput) return;
-    
-    const symbols = symbolsInput.value.split(',').map(s => s.trim()).filter(s => s);
-    const amounts = amountsInput.value.split(',').map(a => parseFloat(a.trim())).filter(a => !isNaN(a) && a > 0);
-    
-    // Reset styles
-    symbolsInput.classList.remove('is-invalid', 'is-valid');
-    amountsInput.classList.remove('is-invalid', 'is-valid');
-    
-    // Auto-calculate weights and total when amounts change
-    if (amounts.length > 0) {
-        const total = amounts.reduce((sum, amount) => sum + amount, 0);
-        const weights = amounts.map(amount => ((amount / total) * 100).toFixed(2));
-        
-        weightsInput.value = weights.join(',');
-        totalValueInput.value = `$${total.toLocaleString()}`;
-    }
-    
-    // Validate inputs
-    if (symbols.length === amounts.length && symbols.length > 0) {
-        const validAmounts = amounts.every(a => a >= 100); // Minimum $100 per stock
-        
-        if (validAmounts) {
-            symbolsInput.classList.add('is-valid');
-            amountsInput.classList.add('is-valid');
-        } else {
-            amountsInput.classList.add('is-invalid');
-        }
-    } else if (symbols.length > 0 || amounts.length > 0) {
-        if (symbols.length !== amounts.length) {
-            symbolsInput.classList.add('is-invalid');
-            amountsInput.classList.add('is-invalid');
-        }
-    }
+    // Visual validation feedback could be added here if needed
+    return hasValidAssets;
 }
 
 // System health check
@@ -842,58 +988,58 @@ function showNotification(message, type = 'info') {
 
 // Quick symbol addition function
 function addQuickSymbol(symbol, name) {
-    // Get current symbols and amounts
-    const symbolsInput = document.getElementById('symbols');
-    const amountsInput = document.getElementById('amounts');
-    
-    const currentSymbols = symbolsInput.value ? symbolsInput.value.split(',').map(s => s.trim()) : [];
-    const currentAmounts = amountsInput.value ? amountsInput.value.split(',').map(a => parseFloat(a.trim())) : [];
-    
     // Check if symbol already exists
-    if (currentSymbols.includes(symbol)) {
+    const existingSymbols = portfolioAssets.map(asset => asset.symbol);
+    if (existingSymbols.includes(symbol)) {
         showNotification(`${symbol} is already in your portfolio`, 'warning');
         return;
     }
     
-    // Add new symbol
-    currentSymbols.push(symbol);
-    
     // Calculate amount for new symbol (default $25,000 or maintain average)
     let newAmount = 25000;
-    if (currentAmounts.length > 0) {
-        const avgAmount = currentAmounts.reduce((sum, a) => sum + a, 0) / currentAmounts.length;
+    if (portfolioAssets.length > 0) {
+        const avgAmount = portfolioAssets.reduce((sum, asset) => sum + asset.amount, 0) / portfolioAssets.length;
         newAmount = Math.round(avgAmount);
     }
     
-    currentAmounts.push(newAmount);
-    
-    // Update inputs
-    symbolsInput.value = currentSymbols.join(',');
-    amountsInput.value = currentAmounts.join(',');
+    // Add new asset row
+    addAssetRow(symbol, newAmount);
     
     showNotification(`Added ${symbol} (${name}) - $${newAmount.toLocaleString()}`, 'success');
     
-    // Trigger validation to calculate weights and total
-    validatePortfolioInputs();
+    // Trigger live quotes update
     setTimeout(loadLiveQuotes, 500);
 }
 
 // Clear portfolio function
 function clearPortfolio() {
+    const portfolioContainer = document.getElementById('portfolioAssets');
+    portfolioContainer.innerHTML = '';
+    portfolioAssets = [];
     document.getElementById('symbols').value = '';
-    document.getElementById('amounts').value = '';
     document.getElementById('weights').value = '';
-    document.getElementById('totalValue').value = '$0';
+    document.getElementById('totalValue').textContent = '$0';
+    document.getElementById('assetCount').textContent = '0';
     showNotification('Portfolio cleared', 'info');
-    validatePortfolioInputs();
 }
 
 // Load sample portfolio function
 function loadSamplePortfolio() {
-    document.getElementById('symbols').value = 'AAPL,MSFT,GOOGL,TSLA,SPY';
-    document.getElementById('amounts').value = '20000,20000,20000,20000,20000';
+    clearPortfolio();
+    
+    const sampleAssets = [
+        {symbol: 'AAPL', amount: 20000},
+        {symbol: 'MSFT', amount: 20000},
+        {symbol: 'GOOGL', amount: 20000},
+        {symbol: 'TSLA', amount: 20000},
+        {symbol: 'SPY', amount: 20000}
+    ];
+    
+    sampleAssets.forEach(asset => {
+        addAssetRow(asset.symbol, asset.amount);
+    });
+    
     showNotification('Sample portfolio loaded successfully', 'success');
-    validatePortfolioInputs();
 }
 
 // Live Market Data Functions
@@ -1160,4 +1306,8 @@ window.loadLiveQuotes = loadLiveQuotes;
 window.showAllSymbols = showAllSymbols;
 window.addSelectedSymbols = addSelectedSymbols;
 window.selectCategory = selectCategory;
-window.clearSymbolSelection = clearSymbolSelection; 
+window.clearSymbolSelection = clearSymbolSelection;
+window.addAssetRow = addAssetRow;
+window.removeAssetRow = removeAssetRow;
+window.updatePortfolioData = updatePortfolioData;
+window.updatePortfolioWithOptimizedWeights = updatePortfolioWithOptimizedWeights; 

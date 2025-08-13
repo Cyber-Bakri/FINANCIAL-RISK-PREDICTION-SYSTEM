@@ -417,6 +417,7 @@ def risk_analysis():
         weights = data.get('weights', [])
         confidence_level = data.get('confidence_level', 0.95)
         time_horizon = data.get('time_horizon', 1)
+        portfolio_value = data.get('portfolio_value', 100000)
         
         # Validate inputs
         if not symbols or not weights or len(symbols) != len(weights):
@@ -443,6 +444,7 @@ def risk_analysis():
             'risk_metrics': risk_metrics,
             'monte_carlo': monte_carlo_results,
             'ml_predictions': ml_predictions,
+            'portfolio_value': portfolio_value,
             'timestamp': datetime.now().isoformat()
         })
         
@@ -459,6 +461,7 @@ def portfolio_optimization():
     try:
         data = request.get_json()
         symbols = data.get('symbols', [])
+        current_weights = data.get('current_weights', [])
         method = data.get('method', 'max_sharpe')
         
         if not symbols:
@@ -467,8 +470,12 @@ def portfolio_optimization():
                 'error': 'No symbols provided'
             }), 400
         
+        # Use provided current weights or default to equal weights
+        if not current_weights or len(current_weights) != len(symbols):
+            current_weights = [1.0 / len(symbols)] * len(symbols)
+        
         # Run portfolio optimization
-        optimization_result = portfolio_manager.optimize_portfolio(symbols, method)
+        optimization_result = portfolio_manager.optimize_portfolio(symbols, method, current_weights)
         
         return jsonify({
             'success': True,

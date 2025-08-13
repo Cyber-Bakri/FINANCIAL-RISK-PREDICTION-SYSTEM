@@ -117,7 +117,7 @@ class SimpleDataCollector:
                 time.sleep(0.1)
             
             return results
-            
+                    
         except Exception as e:
             logger.error(f"Error fetching multiple symbols: {str(e)}")
             return {}
@@ -180,7 +180,7 @@ class SimpleDataCollector:
             
             # Approximate market hours check
             market_open = is_weekday and 9 <= current_hour < 16
-            
+                
             return {
                 'is_market_open': market_open,
                 'current_time': current_time.isoformat(),
@@ -188,7 +188,7 @@ class SimpleDataCollector:
                 'data_freshness': 'real-time' if market_open else 'last_close',
                 'supported_symbols': ['AAPL', 'MSFT', 'GOOGL', 'TSLA', 'NVDA', 'SPY', 'BTC-USD', 'ETH-USD']
             }
-            
+                
         except Exception as e:
             logger.error(f"Error getting market status: {str(e)}")
             return {
@@ -236,7 +236,7 @@ class SimpleDataCollector:
                     'error': 'No recent data available',
                     'data_source': 'yfinance_realtime'
                 }
-                
+            
         except Exception as e:
             logger.error(f"Error getting live quote for {symbol}: {str(e)}")
             return {

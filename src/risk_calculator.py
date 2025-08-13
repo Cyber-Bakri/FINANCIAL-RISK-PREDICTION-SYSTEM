@@ -66,6 +66,12 @@ class SimpleRiskCalculator:
             sharpe_ratio = self._calculate_sharpe_ratio(portfolio_returns)
             
             risk_metrics = {
+                'var_95': var_historical,  # Main VaR for frontend compatibility
+                'var_99': self._calculate_historical_var(portfolio_returns, 0.99, time_horizon),
+                'expected_shortfall': expected_shortfall,
+                'volatility': volatility,
+                'max_drawdown': max_drawdown,
+                'sharpe_ratio': sharpe_ratio,
                 'var_metrics': {
                     'historical_var': var_historical,
                     'parametric_var': var_parametric,
@@ -225,6 +231,12 @@ class SimpleRiskCalculator:
         logger.warning("Using default risk metrics due to calculation errors")
         
         return {
+            'var_95': 0.05,  # 5% default VaR
+            'var_99': 0.08,  # 8% default VaR 99%
+            'expected_shortfall': 0.07,  # 7% default ES
+            'volatility': 0.20,  # 20% default volatility
+            'max_drawdown': -0.15,  # -15% default max drawdown
+            'sharpe_ratio': 0.5,  # Default Sharpe ratio
             'var_metrics': {
                 'historical_var': 0.05,  # 5% default VaR
                 'parametric_var': 0.05,

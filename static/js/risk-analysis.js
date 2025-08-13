@@ -7,6 +7,47 @@
 let currentAnalysisData = null;
 let currentPortfolioConfig = null;
 
+// Helper function to get total portfolio value from dynamic system
+function getTotalPortfolioValue() {
+    const totalValueElement = document.getElementById('totalValue');
+    if (totalValueElement) {
+        // Extract numeric value from formatted string like "$100,000"
+        const totalText = totalValueElement.textContent || totalValueElement.innerText || '$0';
+        const numericValue = parseFloat(totalText.replace(/[$,]/g, ''));
+        return isNaN(numericValue) ? 100000 : numericValue; // Default to 100k if parsing fails
+    }
+    return 100000; // Default fallback
+}
+
+// Helper function to get portfolio data from dynamic system
+function getPortfolioData() {
+    // Make sure portfolio data is up to date
+    if (typeof updatePortfolioData === 'function') {
+        updatePortfolioData();
+    }
+    
+    // Get symbols and weights from hidden fields (updated by dynamic system)
+    const symbolsInput = document.getElementById('symbols');
+    const weightsInput = document.getElementById('weights');
+    
+    if (!symbolsInput || !weightsInput) {
+        throw new Error('Portfolio input fields not found');
+    }
+    
+    const symbols = symbolsInput.value.split(',').map(s => s.trim()).filter(s => s);
+    const weights = weightsInput.value.split(',').map(w => parseFloat(w.trim())).filter(w => !isNaN(w));
+    
+    if (!symbols || symbols.length === 0) {
+        throw new Error('Please add at least one asset to your portfolio');
+    }
+    
+    if (symbols.length !== weights.length) {
+        throw new Error('Number of symbols and weights must match');
+    }
+    
+    return { symbols, weights };
+}
+
 /**
  * Main function to run comprehensive risk analysis
  */
@@ -14,16 +55,8 @@ async function runRiskAnalysis() {
     try {
         console.log('Starting risk analysis...');
         
-        // Get portfolio data
-        const symbolsInput = document.getElementById('symbols');
-        const weightsInput = document.getElementById('weights');
-        
-        if (!symbolsInput || !weightsInput) {
-            throw new Error('Portfolio input fields not found');
-        }
-        
-        const symbols = symbolsInput.value.split(',').map(s => s.trim()).filter(s => s);
-        const weights = weightsInput.value.split(',').map(w => parseFloat(w.trim())).filter(w => !isNaN(w));
+        // Get portfolio data from dynamic system
+        const { symbols, weights } = getPortfolioData();
         
         console.log('Portfolio data:', { symbols, weights });
         
@@ -47,7 +80,7 @@ async function runRiskAnalysis() {
             weights: weights.map(w => w / 100), // Convert to decimals
             confidence_level: parseFloat(document.getElementById('confidenceLevel').value),
             time_horizon: parseInt(document.getElementById('timeHorizon').value),
-            portfolio_value: parseFloat(document.getElementById('portfolioValue').value)
+            portfolio_value: getTotalPortfolioValue()
         };
         
         // Show loading indicator
@@ -152,14 +185,8 @@ async function optimizePortfolio() {
     try {
         console.log('Starting portfolio optimization...');
         
-        // Get portfolio data
-        const symbolsInput = document.getElementById('symbols');
-        
-        if (!symbolsInput) {
-            throw new Error('Portfolio input fields not found');
-        }
-        
-        const symbols = symbolsInput.value.split(',').map(s => s.trim()).filter(s => s);
+        // Get portfolio data from dynamic system
+        const { symbols, weights } = getPortfolioData();
         
         if (!symbols || symbols.length === 0) {
             throw new Error('Please enter at least one asset for portfolio optimization');
@@ -167,31 +194,64 @@ async function optimizePortfolio() {
         
         Utils.showLoading();
         
+        // Get selected optimization method
+        const optimizationMethod = document.getElementById('optimizationMethod').value || 'max_sharpe';
+        console.log('Using optimization method:', optimizationMethod);
+        
         // Run portfolio optimization
         const optimizationData = await Utils.makeRequest('/portfolio-optimization', {
             method: 'POST',
             body: JSON.stringify({
                 symbols: symbols,
-                method: 'max_sharpe' // Default to max Sharpe ratio
+                current_weights: weights.map(w => w / 100), // Convert percentages to decimals
+                method: optimizationMethod
             })
         });
         
         Utils.hideLoading();
         
-        // Update weights in the input fields
-        const weightsInput = document.getElementById('weights');
-        if (weightsInput && optimizationData.optimized_weights) {
-            const newWeights = symbols.map(symbol => {
-                const weight = optimizationData.optimized_weights[symbol];
-                return weight ? (weight * 100).toFixed(1) : '0';
-            });
-            weightsInput.value = newWeights.join(',');
+        // Update portfolio with optimized weights
+        console.log('Optimization data received:', optimizationData);
+        
+        if (optimizationData.optimized_weights) {
+            console.log('Optimized weights:', optimizationData.optimized_weights);
+            
+            if (typeof updatePortfolioWithOptimizedWeights === 'function') {
+                console.log('Updating portfolio dynamically...');
+                updatePortfolioWithOptimizedWeights(optimizationData.optimized_weights);
+                Utils.showSuccess('Portfolio optimized! Investment amounts updated in the form.');
+            } else {
+                console.log('Dynamic update function not available, using fallback...');
+                // Fallback: just update hidden weights field
+                const weightsInput = document.getElementById('weights');
+                if (weightsInput) {
+                    const newWeights = symbols.map(symbol => {
+                        const weight = optimizationData.optimized_weights[symbol];
+                        return weight ? (weight * 100).toFixed(1) : '0';
+                    });
+                    weightsInput.value = newWeights.join(',');
+                    Utils.showSuccess('Portfolio optimized! Weights updated.');
+                }
+            }
+        } else {
+            console.warn('No optimized weights received from API');
         }
         
-        // Show optimization results
+        // Show optimization results with visual feedback
         showOptimizationResults(optimizationData);
         
-        Utils.showSuccess('Portfolio optimization completed! Updated weights in the form.');
+        // Scroll to optimization results and add visual highlight
+        const optimizationSection = document.getElementById('optimizationResults');
+        if (optimizationSection) {
+            optimizationSection.style.display = 'block';
+            optimizationSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // Add visual highlight
+            optimizationSection.style.border = '2px solid #28a745';
+            setTimeout(() => {
+                optimizationSection.style.border = '';
+            }, 3000);
+        }
         
     } catch (error) {
         Utils.hideLoading();
@@ -404,16 +464,8 @@ async function runStressTest() {
     try {
         console.log('Starting stress test...');
         
-        // Get portfolio data
-        const symbolsInput = document.getElementById('symbols');
-        const weightsInput = document.getElementById('weights');
-        
-        if (!symbolsInput || !weightsInput) {
-            throw new Error('Portfolio input fields not found');
-        }
-        
-        const symbols = symbolsInput.value.split(',').map(s => s.trim()).filter(s => s);
-        const weights = weightsInput.value.split(',').map(w => parseFloat(w.trim())).filter(w => !isNaN(w));
+        // Get portfolio data from dynamic system
+        const { symbols, weights } = getPortfolioData();
         
         if (!symbols || symbols.length === 0) {
             throw new Error('Please enter at least one asset for stress testing');
@@ -433,13 +485,21 @@ async function runStressTest() {
         
         Utils.hideLoading();
         
-        // Update stress test results
+        // Update stress test results with visual feedback
         updateStressTestResults(stressData.stress_results);
         
-        // Show stress test section
-        document.getElementById('stressTestResults').style.display = 'block';
+        // Show stress test section with animation
+        const stressSection = document.getElementById('stressTestResults');
+        stressSection.style.display = 'block';
+        stressSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         
-        Utils.showSuccess('Stress test completed successfully!');
+        // Add visual highlight
+        stressSection.style.border = '2px solid #ffc107';
+        setTimeout(() => {
+            stressSection.style.border = '';
+        }, 3000);
+        
+        Utils.showSuccess('Stress test completed! Results updated below.');
         
     } catch (error) {
         Utils.hideLoading();

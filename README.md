@@ -399,8 +399,6 @@ This software is developed for academic purposes as part of a B.Sc. Computer Sci
 
 **Contact Information:**  
 Student: Abubakri Olayide Abdul-Lateef  
-Email: [Your Email]  
+Email: olayidebakri@gmail.com  
 Supervisor: Dr. (Mrs) A.O AMOO  
 Institution: OAU
-
-**Project Completion Date:** April 2025
